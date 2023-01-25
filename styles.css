@@ -1,0 +1,98 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    background: linear-gradient(rgb(5, 1, 46), rgb(47, 1, 34));
+    height: 100vh;
+    font-family: system-ui;
+}
+section{
+    background: url('imgs/stars1.png');
+    height: 100vh;
+    /* to make words in center */
+    display: flex;
+    justify-content: center;   
+    align-items: center;
+}
+ul{
+    text-align: center;
+}
+ul:hover li a{
+    opacity: 0;
+}
+ul li{
+    list-style: none;
+    margin: 14px 0px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 4px;
+    background-color: rgb(83, 1, 100);
+    padding: 6px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    width: 100px; 
+    transition: 0.5s;
+
+    position: relative;
+    z-index: 10;
+
+} 
+
+ul li a:hover{
+    transform: scale(1.5);
+    background-color: blue;
+    opacity: 1;
+}
+
+ul li::after{
+    content: attr(data-text);
+    color: white;
+    /* to make all the word in one place in center */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* to be exactly in the center */
+    transform: translate(-50%, -50%);
+
+    font-size: 80px;
+    font-weight: 900;
+    opacity: 0;
+    pointer-events: none;
+
+    letter-spacing: 50px;
+    transition: 0.5s;
+}
+/* when it hovers in ul li the action will happen on :after */
+ul li:hover:after{
+    opacity: 0.5;
+    letter-spacing: 5px;
+}
+
+ul li::before{
+    content: "";
+    width: 180px;
+    height:80px;
+    background: #fff;
+    border-radius: 50%;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 70%);
+
+    box-shadow: 0 0 80px orangered;
+
+    opacity: 0;
+    transition: 0.5s;
+}
+
+ul li:hover:before{
+    opacity: 0.5;
+    width: 80px;
+}
